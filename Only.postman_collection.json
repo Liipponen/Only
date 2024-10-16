@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "fcf8ebca-0bb8-45ad-83b2-f387d8fd3bc1",
+		"name": "Only",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33341963",
+		"_collection_link": "https://warped-station-310708.postman.co/workspace/Team-Workspace~dc5bcff9-99e8-490a-8629-9a56a86c6b96/collection/33341963-fcf8ebca-0bb8-45ad-83b2-f387d8fd3bc1?action=share&source=collection_link&creator=33341963"
+	},
+	"item": [
+		{
+			"name": "тест футер",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const $ = cheerio.load(pm.response.text());\r",
+							"pm.test(\"В футере есть 'Начать проект'\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect($(\"footer\").text()).to.include('Начать проект');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://only.digital/",
+					"protocol": "https",
+					"host": [
+						"only",
+						"digital"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
